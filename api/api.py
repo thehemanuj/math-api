@@ -2,8 +2,10 @@ from flask import Flask, jsonify
 from mathgenerator import mathgen
 import random  # Import random to pick a random topic ID
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # This enables CORS for all routes
 
 @app.route("/generate-question", methods=["GET"])
 def generate_question():
